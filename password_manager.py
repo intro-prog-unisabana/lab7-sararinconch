@@ -4,8 +4,12 @@ from caesar import caesar_encrypt
 
 
 def encrypt_single_pass(filename: str) -> None:
-    """TODO: Parte 1."""
-    pass
+    with open(filename, "r") as miArchivo:
+         password = miArchivo.read().strip()
+
+    contraseña = caesar_encrypt(password)
+    with open(filename, "w") as f:
+        f.write(contraseña)
 
 
 def encrypt_passwords_in_file(filename: str) -> None:
