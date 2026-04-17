@@ -7,7 +7,7 @@ def main() -> None:
     while True:
         opciones = input("Options: (1) Change Password, (2) Add Password, (3) Quit:")
         if opciones == "1":
-            sitio = input("Enter the website and the new password:")
+            sitio = input("Enter the website and the new password:").split()
             if len(sitio) < 2:
                 print("Input is in the wrong format!")
                 continue
