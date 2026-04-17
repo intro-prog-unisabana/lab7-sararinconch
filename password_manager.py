@@ -15,15 +15,15 @@ def encrypt_single_pass(filename: str) -> None:
 def encrypt_passwords_in_file(filename: str) -> None:
     with open(filename, mode='r') as archivo:
         lector = csv.reader(archivo)
-    lista = []
-    for fila in lector:
-        if fila:
-            lista.append(fila)
-    for fila in lista[1:]:
-        fila[2] = caesar_encrypt(fila[2])
+        lista = []
+        for fila in lector:
+            if fila:
+                lista.append(fila)
+        for fila in lista[1:]:
+            fila[2] = caesar_encrypt(fila[2])
     with open(filename, "w",) as archivo:
         escritor = csv.writer(archivo)
-        escritor.write(lista)
+        escritor.writerows(lista)
    
 
 
